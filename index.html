@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Birthday Surprise For Didi 💗</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #ffd1e8, #ffc4dd);
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.35);
+      backdrop-filter: blur(12px);
+      border-radius: 25px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 520px;
+    }
+
+    .title {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 15px;
+    }
+
+    .msg {
+      font-size: 1.05rem;
+      color: #333;
+      margin-bottom: 30px;
+      line-height: 1.6;
+      white-space: pre-line;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .btn {
+      padding: 12px 18px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 12px;
+      background: #ff9ec7;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #ff82b6;
+    }
+
+    
+    .petal {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      background: radial-gradient(circle, #ff8fb7, #ff4f8b);
+      border-radius: 60% 40% 70% 30%;
+      opacity: 0.85;
+      animation: fallDown 7s linear infinite;
+      transform: rotate(45deg);
+    }
+
+    @keyframes fallDown {
+      0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(110vh) rotate(360deg); opacity: 0.9; }
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(100vh); opacity: 0.9; }
+      100% { transform: translateY(-120vh); opacity: 1; }
+    }
+  </style>
+</head>
+
+<body>
+
+ 
+  <script>
+    for (let i = 0; i < 25; i++) {
+      const p = document.createElement('div');
+      p.className = 'petal';
+      p.style.left = Math.random() * 100 + 'vw';
+      p.style.animationDelay = (Math.random() * 5) + 's';
+      p.style.transform = `rotate(${Math.random()*360}deg)`;
+      p.style.width = (18 + Math.random()*14) + 'px';
+      p.style.height = (18 + Math.random()*14) + 'px';
+      document.body.appendChild(p);
+    }
+  </script>
+
+  <div class="container">
+    <div class="title">🎉Happy Birthday Didi🎂</div>
+
+    <div class="msg" id="msgBox">
+      Happy birthday aparna didi ✨🎉<br>
+      mai pray karunga tumhare bday pe ki tum hamesha khush raho 😊 jitni bhi khusiya hai wo sab tumhe mile 💐 aur sare dukh tumhari life se knock out ho jaye 🤞🥊<br>
+      maybe ye din tumhare liye utna special nhi hai but for me it is important 🫶 bcoz ajj uss insan ka bday hai jisko kuch bhi batane se nhi darta mai...💭<br>
+      meri elder sister aur younger sister hai but wo sab studies ki wajah se busy rehte hai 📚 but you tum meri har problem ko aaram se sunti ho 👂✨ uska solution deti ho 💡 thanks for it 🙏 i wish ki sabko tumhari jaisi didi mile 🙌💫<br>
+      kehna to bahut kuch chahata hu tumse but i think ki sab chize lafzo mai bandhi nhi ja sakti ✨ so maine ek chota sa song bhi banaya hai 🎵💗 sorry tabiyat kharab hone ki wajah se maybe sahi na bana ho 🤧 maaf kardena 😔 but i tried my best...❤️‍🩹<br>
+      At last Happy Birthday to the person who is best sister💗 best listener 👂 best problem solver 🧠 and many more...🌟
+    </div>
+
+    <audio id="bgm" src="https://raw.githubusercontent.com/Itz-Akshat-singh/akshat-music/main/Teri muskan.m4a"></audio>
+
+    <div class="controls">
+      <button class="btn" onclick="rewind()">⏪ Rewind</button>
+      <button class="btn" onclick="playMusic()">▶ Play</button>
+      <button class="btn" onclick="pauseMusic()">⏸ Pause</button>
+    </div>
+  </div>
+
+  <script>
+    const audio = document.getElementById('bgm');
+
+    function playMusic() {
+      audio.play();
+    }
+
+    function pauseMusic() {
+      audio.pause();
+    }
+
+    function rewind() {
+      audio.currentTime = 0;
+    }
+  </script>
+
+</body>
+</html>
+
+
